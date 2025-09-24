@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highway Garage Services</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+       /* Header section  */
+        .section-title {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .section-title h2 {
+            font-size: 35px;
+            color: #1e3c72;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #e74c3c;
+        }
+
+        /* Business Cards Section */
+        .business-cards-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 65px 15px;
+            margin-top: 30px;
+        }
+        .business-cards-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .business-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .business-card {
+            display: flex;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .business-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        .image-container {
+            width: 230px;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .business-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            align-items: center;
+        }
+        .card-content {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card-content h3 {
+            margin: 0 0 10px;
+            font-size: 20px;
+            color: #1e3c72;
+            font-weight: 600;
+        }
+        .rating {
+            margin-bottom: 15px;
+            color: #f1c40f;
+            font-size: 18px;
+        }
+        .address {
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .phone {
+            color: #1e3c72;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .card-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        .btn {
+            text-decoration: none;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            flex: 1;
+            text-align: center;
+        }
+        .btn:hover {
+            background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+            transform: translateY(-2px);
+        }
+        .btn.call {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        }
+        .btn.call:hover {
+            background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="business-cards-section">
+        <div class="business-cards-container">
+            <div class="section-title">
+                <h2>Near NASHIK popular Garages Locations</h2>
+            </div>
+            <div class="business-cards-grid">
+                <div class="business-card">
+                    <div class="image-container">
+                        <img src="https://images.jdmagicbox.com/v2/comp/nashik/z2/0253px253.x253.180330102137.z9z2/catalogue/agasti-automobile-and-gurudatta-garage-sinnar-nashik-car-repair-and-services-7a223zbmjw.jpg">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h3>Bhagwan Garagewala</h3>
+                            <div class="rating"> (4.5 ⭐)</div>
+                            <p class="address"> 📍 Pune Nashik Highway, Sinnar, Nashik-422103 (Sinnar Ghoti Highway), Open until 12:00 am</p>
+                            <p class="phone"> 📞 09054792826</p>
+                        </div>
+                        <div class="card-buttons">
+                            <a href="https://www.google.com/maps/place/19%C2%B049'57.4%22N+73%C2%B058'46.5%22E/@19.83261,73.979595,17z/data=!3m1!4b1!4m4!3m3!8m2!3d19.83261!4d73.979595?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D" class="btn" target="_blank">Get Direction</a>
+                            <a href="RRnashik1.html" class="btn call">Visit Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="business-card">
+                    <div class="image-container">
+                        <img src="https://images.jdmagicbox.com/comp/nashik/g2/0253px253.x253.220602145559.p5g2/catalogue/matoshree-car-care-untwadi-nashik-car-repair-and-services-3fv6mpy5oj.jpg">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h3>Matoshree Car Care</h3>
+                            <div class="rating"> (5.0 ⭐)</div>
+                            <p class="address"> 📍 Plot No.13, Jagtap Nagar, Near Hanuman Temple, Matoshree Chowk, Untwadi-422008</p>
+                            <p class="phone">📞 +919822994344</p>
+                        </div>
+                        <div class="card-buttons">
+                            <a href="https://www.google.com/maps/place/Matoshree+Car+Care/@19.9856232,73.7582726,716m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bddeb09932cab91:0x77298ceffc3de8aa!8m2!3d19.9856182!4d73.7608475!16s%2Fg%2F11qbv4w_d8?entry=ttu&g_ep=EgoyMDI1MDgxMC4wIKXMDSoASAFQAw%3D%3D" class="btn" target="_blank">Get Direction</a>
+                            <a href="RRnashik2.html" class="btn call">Visit Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="business-card">
+                    <div class="image-container">
+                        <img src="https://images.jdmagicbox.com/comp/nashik/k4/0253px253.x253.180627145904.t4k4/catalogue/new-karlines-automobile-rebuilders-pathardi-phata-nashik-mobile-car-washing-services-yjrto1eump.jpg">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h3>New Karlines Automobile Rebuilders</h3>
+                            <div class="rating"> (4.6 ⭐)</div>
+                            <p class="address"> 📍 Plot No 1, , Dnyaneshwar Nagar, Opposite Of Celebrations Hotel, Pathardi Road, Pathardi Phata-422009</p>
+                            <p class="phone">📞 +919823092334</p>
+                        </div>
+                        <div class="card-buttons">
+                            <a href="https://www.google.com/maps/place/New+Karlines+AUTOMOBILE+REBUILDERS/@19.9506195,73.7700134,17z/data=!4m15!1m8!3m7!1s0x3bddeb4d8c6968c5:0xf0df50441bd21897!2sNew+Karlines+AUTOMOBILE+REBUILDERS!8m2!3d19.9506195!4d73.7700134!10e5!16s%2Fg%2F1vxw6qzv!3m5!1s0x3bddeb4d8c6968c5:0xf0df50441bd21897!8m2!3d19.9506195!4d73.7700134!16s%2Fg%2F1vxw6qzv?entry=ttu&g_ep=EgoyMDI1MDgxMC4wIKXMDSoASAFQAw%3D%3D" class="btn" target="_blank">Get Direction</a>
+                            <a href="RRnashik3.html" class="btn call">Visit Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="business-card">
+                    <div class="image-container">
+                        <img src="https://images.jdmagicbox.com/comp/nashik/e5/0253px253.x253.220308141644.v2e5/catalogue/mr-garagewala-indira-nagar-nashik-nashik-garages-id5j8fpnlh.jpg">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h3>Mr. Garagewala</h3>
+                            <div class="rating"> (4.7⭐)</div>
+                            <p class="address">📍 Shop No 09, Kala Nagar, Near Atul Dairy, Raj Laxmi Co Op Socy, Indira Nagar-422009</p>
+                            <p class="phone">📞+918208812705</p>
+                        </div>
+                        <div class="card-buttons">
+                            <a href="https://www.google.com/maps/place/Mr.Garagewala+-+Trusted+Two+Wheeler+Repair+Shop+%26+Garage/@19.9692063,73.7645103,2866m/data=!3m1!1e3!4m10!1m2!2m1!1sMr.+Garagewala+Shop+No+09,+Kala+Nagar,+Near+Atul+Dairy,+Raj+Laxmi+Co+Op+Socy,+Indira+Nagar-422009!3m6!1s0x3bddebd1c3ccc0bb:0x64ade7ac8a06315!8m2!3d19.9692063!4d73.7835647!15sCmFNci4gR2FyYWdld2FsYSBTaG9wIE5vIDA5LCBLYWxhIE5hZ2FyLCBOZWFyIEF0dWwgRGFpcnksIFJhaiBMYXhtaSBDbyBPcCBTb2N5LCBJbmRpcmEgTmFnYXItNDIyMDA5Wl4iXG1yIGdhcmFnZXdhbGEgc2hvcCBubyAwOSBrYWxhIG5hZ2FyIG5lYXIgYXR1bCBkYWlyeSByYWogbGF4bWkgY28gb3Agc29jeSBpbmRpcmEgbmFnYXIgNDIyMDA5kgEWbW90b3JjeWNsZV9yZXBhaXJfc2hvcJoBJENoZERTVWhOTUc5blMwVkpRMEZuU1VRNWMxQTJjM0ZSUlJBQuABAPoBBAgAEDU!16s%2Fg%2F11h__1kl25?entry=ttu&g_ep=EgoyMDI1MDgxMC4wIKXMDSoASAFQAw%3D%3D" class="btn" target="_blank">Get Direction</a>
+                              <a href="RRnashik4.html" class="btn call">Visit Now </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="business-card">
+                    <div class="image-container">
+                        <img src="https://images.jdmagicbox.com/v2/comp/nashik/d9/0253px253.x253.240814165647.g3d9/catalogue/plg4zdqh1gnv44s-m7p3r14zud.jpg">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h3>Premium Car Service </h3>
+                            <div class="rating"> (4.7 ⭐)</div>
+                            <p class="address">📍  DGP Nagar 1, Tagor Nagar Nashik Road Near Ganpati Mandir, Indira Nagar-422009 </p>
+                            <p class="phone">📞 +919156133792 </p>
+                        </div>
+                        <div class="card-buttons">
+                            <a href="https://www.google.com/maps/place/Premium+car+services/@19.9730092,73.8056186,567m/data=!3m1!1e3!4m12!1m5!3m4!2zMTnCsDU4JzIwLjMiTiA3M8KwNDgnMjUuMyJF!8m2!3d19.9723134!4d73.8070348!3m5!1s0x3bddeb22eebd6a8d:0x83d573606e71ceb7!8m2!3d19.9745352!4d73.805881!16s%2Fg%2F11vzw9w4lk?entry=ttu&g_ep=EgoyMDI1MDgxMC4wIKXMDSoASAFQAw%3D%3D" class="btn" target="_blank">Get Direction</a>
+                            <a href="RRnashik5.html" class="btn call">Visit Now  </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="business-card">
+                    <div class="image-container">
+                        <img src="https://images.jdmagicbox.com/comp/nashik/g6/0253px253.x253.120130151404.l3g6/catalogue/new-indian-glass-and-accessories-sarda-circle-nashik-automobile-glass-dealers-p99hv3gbcp.jpg">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h3> New INDIAN CAR GLASS RAJ AUTOMOBILES </h3>
+                            <div class="rating"> (3.8⭐)</div>
+                            <p class="address">📍 Old Sarda Circle, Nashik - Pune Rd, opp. milan Rexine, Nashik, Maharashtra 422001 </p>
+                            <p class="phone">📞 +919373922386 </p>
+                        </div>
+                        <div class="card-buttons">
+                            <a href=" https://www.google.com/maps/place/INDIAN+CAR+GLASS+RAJ+AUTOMOBILES/@19.9943356,73.7909735,142m/data=!3m1!1e3!4m14!1m7!3m6!1s0x3bddeb05a5434515:0xfe8213fba1a21cfb!2sINDIAN+CAR+GLASS+RAJ+AUTOMOBILES!8m2!3d19.9943356!4d73.7916186!16s%2Fg%2F11b6x838q4!3m5!1s0x3bddeb05a5434515:0xfe8213fba1a21cfb!8m2!3d19.9943356!4d73.7916186!16s%2Fg%2F11b6x838q4?entry=ttu&g_ep=EgoyMDI1MDgxMC4wIKXMDSoASAFQAw%3D%3D" class="btn" target="_blank">Get Directions</a>
+                            <a href="RRnashik6.html" class="btn call">Visit Now</a>
+               
+                        </div>
+                    </div>
+                </div>
+
+                <div class="business-card">
+                    <div class="image-container">
+                        <img src="https://images.jdmagicbox.com/comp/nashik/e6/0253px253.x253.190821162646.h6e6/catalogue/bukhari-car-care-and-spares-part-chandwad-nashik-car-repair-and-services-giu642eh22.jpg">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h3>Bukhari Car Care And Spares Part</h3>
+                            <div class="rating"> (4.7 ⭐)</div>
+                            <p class="address">📍  Near Tvs Showroom, Mumbai Agra Highway, Chandwad-423101</p>
+                            <p class="phone">📞+919503069921 </p>
+                        </div>
+                        <div class="card-buttons">
+                            <a href="https://www.google.com/maps/place/Bukhari+Car+Care/@20.3305249,74.2308498,35m/data=!3m1!1e3!4m12!1m5!3m4!2zMjDCsDE5JzUwLjQiTiA3NMKwMTMnNTEuNiJF!8m2!3d20.3306526!4d74.2310109!3m5!1s0x3bdc2adab8198ee3:0x58335fb668d5db64!8m2!3d20.3306147!4d74.2310007!16s%2Fg%2F11f5h3bj1q?entry=ttu&g_ep=EgoyMDI1MDgxMC4wIKXMDSoASAFQAw%3D%3D" class="btn" target="_blank">Get Direction</a>
+                            <a href="RRnashik7.html" class="btn call">Visit Now</a>
+                             
+                        </div>
+                    </div>
+                </div>
+
+                <div class="business-card">
+                    <div class="image-container">
+                        <img src="https://images.jdmagicbox.com/comp/nashik/w8/0253px253.x253.200318185159.j8w8/catalogue/chaitanya-auto-care-center-jail-road-nashik-motorcycle-repair-and-services-suzuki-47uqhz6upm.jpg">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h3>Chaitanya Auto Care Center </h3>
+                            <div class="rating"> (4.8 ⭐)</div>
+                            <p class="address">📍 Near Vithal Mangal Karyalay, Old Saikheda Road, Jail Road-422101 </p>
+                            <p class="phone">📞 +919579460454 </p>
+                        </div>
+                        <div class="card-buttons">
+                            <a href="https://www.google.com/maps/place/Chaitanya+Auto+care+center/@19.9742545,73.8310576,197m/data=!3m1!1e3!4m12!1m5!3m4!2zMTnCsDU4JzI3LjUiTiA3M8KwNDknNTQuMCJF!8m2!3d19.9743139!4d73.8316611!3m5!1s0x3bddeb930b95020b:0xf8e8bd50a9eb0f00!8m2!3d19.9741983!4d73.8316967!16s%2Fg%2F11frrgrmp7?entry=ttu&g_ep=EgoyMDI1MDgxMC4wIKXMDSoASAFQAw%3D%3D" class="btn" target="_blank">Get Direction</a>
+                            <a href="RRnashik8.html" class="btn call">Visit Now</a>
+          
+                        </div>
+                    </div>
+                </div>
+
+                <div class="business-card">
+                    <div class="image-container">
+                        <img src="https://images.jdmagicbox.com/v2/comp/nashik/k9/0253px253.x253.141119175306.d8k9/catalogue/laukik-s-motor-care-satpur-nashik-car-repair-and-services-nissan-u8w6jwg13a.jpg">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h3>Laukik's Motor Care </h3>
+                            <div class="rating"> (4.4 ⭐)</div>
+                            <p class="address">📍D-85, , Opp. NIWEC Club, Pipeline Road, Satpur-422007 </p>
+                            <p class="phone">📞 +918087946575 </p>
+                        </div>
+                        <div class="card-buttons">
+                            <a href="https://www.google.com/maps/place/Laukik's+Motor+Care/@19.9997291,73.7400986,72m/data=!3m1!1e3!4m12!1m5!3m4!2zMTnCsDU5JzU5LjAiTiA3M8KwNDQnMjUuNCJF!8m2!3d19.99973!4d73.74038!3m5!1s0x3bddec7c35f605b7:0xa5bb502c7a46f10d!8m2!3d19.9998092!4d73.7405403!16s%2Fg%2F11b5qxrrf4?entry=ttu&g_ep=EgoyMDI1MDgxMC4wIKXMDSoASAFQAw%3D%3D" class="btn" target="_blank">Get Direction</a>
+                             <a href="RRnashik9.html" class="btn call">Visit Now</a>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <div class="business-card">
+                    <div class="image-container">
+                        <img src="https://images.jdmagicbox.com/comp/nashik/j4/0253px253.x253.120606121340.n1j4/catalogue/a1-auto-air-conditioning-and-electrics-singada-talao-nashik-car-repair-and-services-i6a4chc4m0.jpg">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h3> A1 Auto AIR Conditioning And Electrics </h3>
+                            <div class="rating"> (3.9 ⭐)</div>
+                            <p class="address">📍Shop No-10, Opposite Hira Moti, Palika Bazar, Pune Road, Singada Talao-422002</p>
+                            <p class="phone">📞+919371568655 </p>
+                        </div>
+                        <div class="card-buttons">
+                            <a href="https://www.google.com/maps/place/A-One+Auto+Car+Repair/@19.993568,73.7864737,78m/data=!3m1!1e3!4m12!1m5!3m4!2zMTnCsDU5JzM2LjYiTiA3M8KwNDcnMTIuOSJF!8m2!3d19.9934982!4d73.7869176!3m5!1s0x3bddeb04477a10cb:0x64c3306a59b72c9f!8m2!3d19.9936899!4d73.7869264!16s%2Fg%2F11b6xhkvcj?entry=ttu&g_ep=EgoyMDI1MDgxMC4wIKXMDSoASAFQAw%3D%3D" class="btn" target="_blank">Get Direction</a>
+                            <a href="RRnashik10.html" class="btn call">Visit Now</a>
+                             
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

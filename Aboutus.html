@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - RoadRescue</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <style>
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;color:#333;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;}
+.container{max-width:1200px;margin:0 auto;padding:20px;}
+header .container{max-width:100%;padding:0 20px;}
+header{background-color:#1e40af;color:white;padding:2px 0;width:100%;position:fixed;top:0;left:0;right:0;z-index:1000;}
+.header-content{display:flex;justify-content:space-between;align-items:center;width:100%;padding-right:40px;}
+.navbar{display:flex;align-items:center;height:65px;}
+.logo{display:flex;align-items:center;gap:4px;}
+.logo-image{width:135px;height:65px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.logo-image img{width:100%;height:100%;object-fit:contain;margin-bottom:14px;}
+.logo h1{font:bold 24px/1 Arial,sans-serif;letter-spacing:1px;margin-bottom:14px;white-space:nowrap;}
+.logo h1 span{color:#93c5fd;}
+.right-section{display:flex;align-items:center;gap:30px;margin-right:20px;}
+nav{display:flex;gap:25px;}
+nav a{color:white;text-decoration:none;font:500 16px Arial,sans-serif;padding:10px 18px;border-radius:25px;transition:all 0.3s ease;}
+nav a:hover{color:#e2e8f0;transform:translateY(-1px);background-color:rgba(255,255,255,0.1);}
+.profile-container{position:relative;}
+.profile-icon{display:flex;align-items:center;justify-content:center;width:45px;height:45px;background-color:#4d89c5;border-radius:50%;cursor:pointer;border:2px solid white;transition:all 0.3s ease;}
+.profile-icon:hover{background-color:#3b82f6;transform:scale(1.05);box-shadow:0 2px 8px rgba(0,0,0,0.2);}
+.profile-icon i{font-size:22px;color:white;transition:all 0.3s ease;}
+.profile-icon:hover i{transform:rotate(360deg);}
+.dropdown-menu{position:absolute;top:60px;left:50%;transform:translateX(-50%);background-color:white;border-radius:8px;border:1px solid #ddd;min-width:200px;display:none;box-shadow:0 8px 25px rgba(0,0,0,0.15);z-index:2000;}
+.dropdown-menu.show{display:block;}
+.dropdown-item{display:flex;align-items:center;padding:12px 16px;border-bottom:1px solid #f0f0f0;cursor:pointer;transition:background-color 0.3s ease;}
+.dropdown-item:last-child{border-bottom:none;}
+.dropdown-item:hover{background-color:#f8fafc;}
+.dropdown-item i{font-size:18px;color:#4d89c5;margin-right:12px;}
+.dropdown-item a{color:#333;text-decoration:none;font:500 14px Arial,sans-serif;}
+header.page-header{text-align:center;margin-bottom:60px;padding:40px 0;margin-top:100px;}
+.about h1{font-size:3.5rem;color:white;margin-bottom:20px;text-shadow:2px 2px 4px rgba(0,0,0,0.3);margin-top:100px;text-align:center;}
+.subtitle{font-size:1.3rem;color:rgba(255,255,255,0.9);font-weight:300;text-align:center;}
+.content-section{background:white;border-radius:20px;padding:50px;margin-bottom:40px;box-shadow:0 20px 40px rgba(0,0,0,0.1);transform:translateY(0);transition:transform 0.3s ease,box-shadow 0.3s ease;}
+.content-section:hover{transform:translateY(-5px);box-shadow:0 25px 50px rgba(0,0,0,0.15);}
+.content-section h2{font-size:2.5rem;color:#4a5568;margin-bottom:30px;text-align:center;position:relative;}
+.content-section h2::after{content:'';display:block;width:80px;height:4px;background:linear-gradient(90deg,#667eea,#764ba2);margin:15px auto;border-radius:2px;}
+.content-section p{font-size:1.1rem;margin-bottom:20px;color:#666;text-align:justify;}
+.values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;margin-top:40px;}
+.value-item{text-align:center;padding:30px 20px;background:linear-gradient(135deg,#f8f9fa,#e9ecef);border-radius:15px;transition:transform 0.3s ease;}
+.value-item:hover{transform:translateY(-10px);}
+.value-icon{font-size:3rem;margin-bottom:20px;color:#667eea;}
+.value-title{font-size:1.3rem;font-weight:600;color:#4a5568;margin-bottom:15px;}
+.value-description{font-size:1rem;color:#666;line-height:1.5;}
+.cta-section{background:linear-gradient(135deg,#4a5568,#2d3748);color:white;text-align:center;padding:60px 50px;}
+.cta-section h2{color:white;margin-bottom:20px;}
+.cta-section h2::after{background:white;}
+.cta-button{display:inline-block;background:linear-gradient(135deg,#667eea,#764ba2);color:white;padding:15px 40px;text-decoration:none;border-radius:50px;font-weight:600;font-size:1.1rem;margin-top:20px;transition:transform 0.3s ease,box-shadow 0.3s ease;}
+.cta-button:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(102,126,234,0.4);color:white;text-decoration:none;}
+footer{background:#374151;color:white;padding:40px 0;}
+.footer-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;}
+.footer-section h4{font-size:20px;margin-bottom:15px;}
+.footer-section p,.footer-section a{color:#d1d5db;text-decoration:none;margin-bottom:8px;display:block;}
+.footer-section a:hover{color:white;}
+.social-links{display:flex;gap:15px;margin-top:15px;}
+.social-links a{font-size:24px;color:#d1d5db;transition:color 0.3s;}
+.social-links a:hover{color:white;}
+.footer-bottom{text-align:center;margin-top:30px;padding-top:20px;border-top:1px solid #4b5563;color:#9ca3af;}
+@media (min-width:769px)
+{
+    .container{padding:20px;}
+     .header-content{padding-right:40px;}
+      .right-section{gap:30px;margin-right:20px;}
+       nav{gap:25px;}
+        nav a{font-size:16px;padding:10px 18px;}
+         .about h1{font-size:3.5rem;margin-top:100px;}
+          .subtitle{font-size:1.3rem;}
+           .content-section{padding:50px;margin-bottom:40px;}
+            .content-section h2{font-size:2.5rem;}
+             .content-section p{font-size:1.1rem;}
+              .values-grid{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;}
+               .value-item{padding:30px 20px;}
+                .value-icon{font-size:3rem;} 
+                .value-title{font-size:1.3rem;}
+                 .cta-section{padding:60px 50px;}
+                  .footer-content{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;}
+                }
+
+@media (max-width:768px)
+{
+    .container{padding:15px;}
+     header{padding:5px 0;}
+      .header-content{flex-direction:column;gap:15px;padding-right:20px;align-items:center;}
+       .navbar{height:auto;width:100%;justify-content:center;}
+        .logo{flex-direction:column;gap:5px;text-align:center;}
+         .logo-image{width:80px;height:40px;}
+          .logo h1{font-size:18px;margin-bottom:5px;}
+           .right-section{width:100%;justify-content:center;gap:15px;margin-right:0;flex-wrap:wrap;}
+            nav{gap:10px;flex-wrap:wrap;justify-content:center;} nav a{font-size:14px;padding:8px 12px;white-space:nowrap;}
+             .profile-icon{width:35px;height:35px;}
+              .profile-icon i{font-size:18px;}
+               .dropdown-menu{right:0;left:auto;transform:none;min-width:180px;}
+                .about h1{font-size:2.5rem;margin-top:140px;}
+                 .subtitle{font-size:1.1rem;padding:0 15px;} 
+                .content-section{padding:30px 25px;margin-bottom:30px;border-radius:15px;} 
+                .content-section h2{font-size:2rem;margin-bottom:25px;}
+                 .content-section h2::after{width:60px;height:3px;margin:10px auto;}
+                  .content-section p{font-size:1rem;text-align:left;margin-bottom:15px;}
+                   .values-grid{grid-template-columns:1fr;gap:20px;margin-top:30px;}
+                    .value-item{padding:25px 15px;border-radius:12px;}
+                     .value-icon{font-size:2.5rem;margin-bottom:15px;}
+                      .value-title{font-size:1.2rem;margin-bottom:12px;}
+                       .value-description{font-size:0.95rem;line-height:1.4;}
+                        .cta-section{padding:40px 25px;}
+                         .cta-section h2{font-size:2rem;margin-bottom:15px;}
+                          .cta-section p{font-size:1rem;margin-bottom:15px;}
+                           .cta-button{padding:12px 30px;font-size:1rem;margin-top:15px;}
+                            footer{padding:30px 0;} .footer-content{grid-template-columns:1fr;gap:25px;padding:0 15px;}
+                             .footer-section{text-align:center;} 
+                             .footer-section h4{font-size:18px;margin-bottom:12px;}
+                              .footer-section p,.footer-section a{font-size:14px;margin-bottom:6px;} 
+                              .social-links{justify-content:center;gap:20px;margin-top:12px;}
+                               .social-links a{font-size:22px;} 
+                         .footer-bottom{margin-top:25px;padding-top:15px;font-size:14px;}
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="navbar">
+                    <div class="logo">
+                        <div class="logo-image">
+                            <img src="images/RRlogo.png" alt="RoadRescue Logo">
+                        </div>
+                        <h1>ROAD<span>RESCUE</span></h1>
+                    </div>
+                </div>
+                <div class="right-section">
+                    <nav>
+                        <a href="RRhomepage.jsp">Home</a>
+                        <a href="Aboutus.html">About Us</a>
+                        <a href="contactus.jsp">Support</a>
+                        <a href="joinus.jsp">Add Garage</a>
+                    </nav>
+                    <div class="profile-container">
+                        <div class="profile-icon" onclick="toggleDropdown()">
+                            <i class='bx bx-user'></i>
+                        </div>
+                            <div class="dropdown-menu" id="dropdown">
+                            <div class="dropdown-item">
+                                <i class='bx bx-user-circle'></i>
+                                <a href="profile.jsp">Account</a>
+                            </div>
+                            <div class="dropdown-item">
+                                <i class='bx bx-crown'></i>
+                                <a href="login.jsp">Admin</a>
+                            </div>
+                            <div class="dropdown-item">
+                                <i class='bx bx-log-out'></i>
+                                <a href="AAintropage.html">Sign Out</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="about">
+            <h1>About Us</h1>
+            <p class="subtitle">Welcome To our RoadRescue platform</p>
+        </div>
+
+        <!-- Our Story -->
+        <section class="content-section">
+            <h2>Our Story</h2>
+            <p> :- RoadRescue is a student-created web project, designed and developed in 2025 with a vision to make road journeys safer, easier, and more reliable. As students, we wanted to solve a real problem faced by people every day – the difficulty of finding nearby garages and vehicle repair services during times of emergency.</p>
+            <p>:- This website acts as a bridge between garage owners and vehicle owners, providing a simple, user-friendly platform where people can quickly locate the nearest garage, view essential details, and connect directly with the service provider.</p>
+            <p>:- The core idea behind RoadRescue is convenience. Whether your vehicle breaks down in an unknown area or you simply need a quick repair, you don't have to waste time searching. With just a few clicks, our platform displays multiple garages in your vicinity. Each garage is represented in a well-designed card format, showing important information such as:Garage name,Contact number,Location (with map support),Working hours,Services offered</p>
+        <p>:-Our website makes it possible for users to directly contact garage owners, ensuring quick response in emergency situations. Instead of relying on random searches or asking strangers on the road, you now have a trusted digital tool in your pocket.</p>
+       <p>:-RoadRescue also provides location tracking and directions, so once you choose a garage, you can easily navigate to it. This helps reduce stress and time during urgent breakdowns.</p>
+<p>:-As students building this platform, we wanted to combine learning with real-world problem solving. We focused on creating a responsive, user-friendly design so that anyone can use it easily, whether on a mobile phone, tablet, or desktop.</p>
+        </section>
+
+        <!-- Our Mission -->
+        <section class="content-section">
+            <h2>Our Mission</h2>
+            <p>:- Apart from emergency breakdowns, RoadRescue can also be used for:Finding nearby garages for regular servicing,Checking out repair shops before visiting,
+Contacting multiple garage owners to compare services,Exploring garages in new cities or unknown routes.</p>
+           <p>:- Our mission is to make garage services accessible, fast, and reliable for everyone. This project gave us hands-on experience in web development, design, and problem-solving while also contributing something valuable to society.</p>
+        </section>
+
+        <!-- Our Values -->
+        <section class="content-section">
+            <h2>Our Values</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon"><i class='bx bx-shield-alt-2'></i></div>
+                    <div class="value-title">Reliability</div>
+                    <div class="value-description"> RoadRescue is a reliable platform that provides accurate garage details, direct contact with owners, and live location support to assist users during vehicle emergencies.</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon"><i class='bx bx-run'></i></div> 
+                    <div class="value-title">Speed</div>
+                    <div class="value-description">RoadRescue is designed with a fast and responsive interface, ensuring quick loading speed, smooth navigation, and instant access to nearby garage details even during emergencies.</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon"><i class='bx bx-wrench'></i></div>
+                    <div class="value-title">Expertise</div>
+                    <div class="value-description">RoadRescue demonstrates expertise in providing accurate garage information, integrating live location services, enabling direct communication with garage owners, and delivering a simple, user-friendly platform built with modern web technologies.</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon"><i class='bx bx-check-circle'></i></div>
+                    <div class="value-title">Trust</div>
+                    <div class="value-description">RoadRescue builds trust by offering verified garage details, transparent communication with owners, and reliable location support, ensuring users feel confident in every service they access</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon"><i class='bx bx-mobile-alt'></i></div>
+                    <div class="value-title">Innovation</div>
+                    <div class="value-description"> RoadRescue is innovative because it combines real-time garage location tracking, direct owner contact, and a simple card-based interface to make vehicle assistance faster and more accessible.</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon"><i class='bx bx-star'></i></div>
+                    <div class="value-title">Excellence</div>
+                    <div class="value-description"> RoadRescue shows excellence by delivering fast, accurate, and user-friendly garage services with a professional design that ensures reliability during emergencies.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section cta-section">
+            <h2>Ready to Work Together?</h2>
+            <p>RoadRescue is always ready to work together with garage owners, users, and partners to create a trusted, fast, and accessible platform for vehicle assistance.</p>
+            <a href="joinus.jsp" class="cta-button">Get In Touch</a>
+        </section>
+    </div>
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>RoadRescue</h4>
+                <p>Helping drivers find reliable repair services when they need it most.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="RRhomepage.jsp">Home</a>
+                <a href="Aboutus.html">About Us</a>
+                <a href="contactus.jsp">Support</a>
+                <a href="joinus.jsp">Add Garage</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: roderescue@gmail.com</p>
+                <p>Phone: 8080XXXXXXXX</p>
+                <div class="social-links">
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class='bx bxl-youtube'></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 RoadRescue. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown');
+            dropdown.classList.toggle('show');
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.profile-icon') && !event.target.matches('.profile-icon i')) {
+                const dropdown = document.getElementById('dropdown');
+                if (dropdown.classList.contains('show')) {
+                    dropdown.classList.remove('show');
+                }
+            }
+        }
+    </script>
+</body>
+</html>

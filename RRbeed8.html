@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoadRescue - Yashraj Motors</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Header */
+        .header-banner {
+            background-color: #1e40af;
+            color: white;
+            padding: 15px 0;
+        }
+
+        .breadcrumb-text {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* Main Container */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Business Card */
+        .business-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 20px 0;
+            border: 1px solid #e0e0e0;
+        }
+
+        .business-header {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-bottom: 1px solid #e0e0e0;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .business-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #262d44;
+            margin-bottom: 15px;
+        }
+
+        .rating-badge {
+            background-color: #6b7280;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .verified-badge {
+            background-color: #059669;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .contact-buttons {
+            margin-top: 20px;
+        }
+
+        .btn-contact {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-right: 15px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .btn-phone {
+            background-color: #059669;
+            color: white;
+        }
+
+        .btn-phone:hover {
+            background-color: #10b981;
+            color: white;
+        }
+
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #20ba5a;
+            color: white;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        /* Section Cards */
+        .section-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border: 1px solid #e0e0e0;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1e40af;
+            margin-bottom: 20px;
+        }
+
+        /* Photos */
+        .photos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .photo-card {
+            height: 180px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            border-top: 4px solid #1e40af;
+        }
+
+        .service-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1e40af;
+            margin-bottom: 10px;
+        }
+
+        .service-description {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .service-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #059669;
+            margin-bottom: 15px;
+        }
+
+        .price-suffix {
+            font-size: 14px;
+            font-weight: normal;
+            color: #666;
+        }
+
+        .enquire-service-btn {
+            background-color: #25d366;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .enquire-service-btn:hover {
+            background-color: #20ba5a;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border: 1px solid #e0e0e0;
+        }
+
+        .contact-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1e40af;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .contact-label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .contact-value {
+            color: #333;
+            font-weight: bold;
+        }
+
+        .phone-link {
+            color: #1e40af;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .status-open {
+            color: #059669;
+            font-weight: bold;
+        }
+
+        .directions-link {
+            color: #1e40af;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .directions-link:hover {
+            color: #3b82f6;
+        }
+
+        .call-now-btn {
+            background-color: #dc2626;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .call-now-btn:hover {
+            background-color: #ef4444;
+        }
+
+        /* Footer */
+        footer {
+            background: #374151;
+            color: white;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-section h4 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #d1d5db;
+            text-decoration: none;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            font-size: 24px;
+            color: #d1d5db;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #4b5563;
+            color: #9ca3af;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .photos-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .business-title {
+                font-size: 28px;
+            }
+
+            .contact-buttons {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .btn-contact {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Banner -->
+    <div class="header-banner">
+        <div class="main-container">
+            <p class="breadcrumb-text">
+                                 <a href="beedservices.html" ><i class="fa-solid fa-arrow-left" style="color: #fafaff; width: 30px;"></i></a>
+                <i class="fas fa-home"></i> RoadRescue &gt; Garages in Beed &gt; NATH AUTOMOBILES
+            </p>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Business Card -->
+        <div class="business-card">
+            <div class="business-header">
+                <h1 class="business-title">
+                    <i class="fas fa-car"></i> NATH AUTOMOBILES
+                
+                <div class="mb-3">
+                    <span class="rating-badge">
+                        <i class="fas fa-star"></i> 4.3
+                    </span>
+                    <span class="text-muted">56 Ratings</span>
+                    <span class="verified-badge">
+                        <i class="fas fa-check-circle"></i> Verified
+                    </span>
+                </div>
+
+                <div class="mb-3">
+                    <i class="fas fa-map-marker-alt" style="color: #1e40af;"></i>
+                    <span class="ms-2">Bawale Complex, Near Police Petrol Pump, Nagar Road, Balepir-431122</span>
+                </div>
+
+                <div class="contact-buttons">
+                    <a href="tel:+919763979170" class="btn-contact btn-phone">
+                        <i class="fas fa-phone"></i> +919763979170
+                    </a>
+                    <a href="https://wa.me/+919763979170?text=Hello%20Yashraj%20Motors,%20I%20would%20like%20to%20enquire%20about%20your%20services." class="btn-contact btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Layout -->
+        <div class="main-content">
+            <!-- Left Section -->
+            <div class="left-section">
+                <!-- Photos Section -->
+                <div class="section-card">
+                    <h2 class="section-title">
+                        <i class="fas fa-images"></i> Gallery
+                    </h2>
+                    <div class="photos-grid">
+                        <div class="photo-card">
+                            <a href="https://images.jdmagicbox.com/comp/beed/v6/9999p2442.2442.190605141028.g7v6/catalogue/nath-automobile-and-servicing-centre-balepir-beed-spare-part-dealers-7fp6so3zp1.jpg">
+                                <img src="https://images.jdmagicbox.com/comp/beed/v6/9999p2442.2442.190605141028.g7v6/catalogue/nath-automobile-and-servicing-centre-balepir-beed-spare-part-dealers-7fp6so3zp1.jpg" alt="Yashraj Motors">
+                            </a>
+                        </div>
+                        <div class="photo-card">
+                            <a href="https://images.jdmagicbox.com/comp/beed/v6/9999p2442.2442.190605141028.g7v6/catalogue/nath-automobile-and-servicing-centre-balepir-beed-spare-part-dealers-jr84cpu4dd.jpg">
+                                <img src="https://images.jdmagicbox.com/comp/beed/v6/9999p2442.2442.190605141028.g7v6/catalogue/nath-automobile-and-servicing-centre-balepir-beed-spare-part-dealers-jr84cpu4dd.jpg" alt="Yashraj Motors">
+                            </a>
+                        </div>
+                        <div class="photo-card">
+                            <a href="https://lh3.googleusercontent.com/gps-cs/AIky0YXuiRFafoTTJmqzbOduQYChQ6_nqEFagImxbZsmoxGkS9bYyXnr1bYNo46ykyF3qdwAreJfQPFcE7ScfGXpr6pNNYtEgGx9qyFoXYdSfMsQrOHRqpBjnT9byhqySWIcUmm8vh42=w825-h1359-p-k-no">
+                                <img src="https://lh3.googleusercontent.com/gps-cs/AIky0YXuiRFafoTTJmqzbOduQYChQ6_nqEFagImxbZsmoxGkS9bYyXnr1bYNo46ykyF3qdwAreJfQPFcE7ScfGXpr6pNNYtEgGx9qyFoXYdSfMsQrOHRqpBjnT9byhqySWIcUmm8vh42=w825-h1359-p-k-no" alt="Yashraj Motors">
+                            </a>
+                        </div>
+                        <div class="photo-card">
+                            <a href="https://images.jdmagicbox.com/comp/beed/v6/9999p2442.2442.190605141028.g7v6/catalogue/naat-automobile-servicing-centre-beed-hgiz2e4d5s.jpg">
+                                <img src="https://images.jdmagicbox.com/comp/beed/v6/9999p2442.2442.190605141028.g7v6/catalogue/naat-automobile-servicing-centre-beed-hgiz2e4d5s.jpg" alt="Yashraj Motors">
+                            </a>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+
+                <!-- Services Section -->
+                <div class="section-card">
+                    <h2 class="section-title">
+                        <i class="fas fa-wrench"></i> Our Services
+                    </h2>
+
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <h3 class="service-title">
+                                <i class="fas fa-cog"></i> Car Mechanical Repairs
+                            </h3>
+                            <p class="service-description">
+                                Car mechanical repairs encompass a range of services aimed at diagnosing and fixing various mechanical issues in vehicles.
+                            </p>
+                            <div class="service-price">
+                                ₹499 <span class="price-suffix">onwards / service</span>
+                            </div>
+                            <a href="https://wa.me/+919763979170?text=Hello%20Yashraj%20Motors,%20I%20would%20like%20to%20enquire%20about%20Car%20Mechanical%20Repairs%20service." class="enquire-service-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp Enquiry
+                            </a>
+                        </div>
+
+                        <div class="service-card">
+                            <h3 class="service-title">
+                                <i class="fas fa-car"></i> Car Suspension & Fitment Services
+                            </h3>
+                            <p class="service-description">
+                                Car Suspension & Fitment Services are essential for ensuring your vehicle's stability, comfort, and handling performance.
+                            </p>
+                            <div class="service-price">
+                                ₹500 <span class="price-suffix">onwards / service</span>
+                            </div>
+                            <a href="https://wa.me/+919763979170?text=Hello%20Yashraj%20Motors,%20I%20would%20like%20to%20enquire%20about%20Car%20Suspension%20and%20Fitment%20Services." class="enquire-service-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp Enquiry
+                            </a>
+                        </div>
+
+                        <div class="service-card">
+                            <h3 class="service-title">
+                                <i class="fas fa-paint-brush"></i> Car Polishing Services
+                            </h3>
+                            <p class="service-description">
+                                Car polishing services are designed to enhance the aesthetic appeal of your vehicle while providing essential protection to its exterior.
+                            </p>
+                            <div class="service-price">
+                                ₹300 <span class="price-suffix">onwards / service</span>
+                            </div>
+                            <a href="https://wa.me/+919763979170?text=Hello%20Yashraj%20Motors,%20I%20would%20like%20to%20enquire%20about%20Car%20Polishing%20Services." class="enquire-service-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp Enquiry
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="sidebar">
+                <div class="contact-card">
+                    <h3 class="contact-title">
+                        <i class="fas fa-address-book"></i> Contact Information
+                    </h3>
+
+                    <div class="contact-item">
+                        <div class="contact-label">Phone</div>
+                        <div class="contact-value">
+                            <a href="tel:+919763979170" class="phone-link">
+                                <i class="fas fa-phone"></i> +919763979170
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-label">Address</div>
+                        <div class="contact-value">
+                            <i class="fas fa-map-marker-alt"></i>
+                          Bawale Complex, Near Police Petrol Pump, Nagar Road, Balepir-431122
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-label">Status</div>
+                        <div class="contact-value status-open">
+                            <i class="fas fa-clock"></i> Open until 09:00 pm
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <a href="https://www.google.com/maps/place/NATH+AUTOMOBILES/@18.9917469,74.5181923,184532m/data=!3m1!1e3!4m10!1m2!2m1!1sNath+Automobile+Nath+Automobile!3m6!1s0x3bc52baf9f1a3731:0x6b79181e4f7cf320!8m2!3d18.9917469!4d75.7376747!15sCh9OYXRoIEF1dG9tb2JpbGUgTmF0aCBBdXRvbW9iaWxlkgEQYXV0b19wYXJ0c19zdG9yZaoBdgoHL20vMGs0ahABKiMiH25hdGggYXV0b21vYmlsZSBuYXRoIGF1dG9tb2JpbGUoADIfEAEiG4U5HsRxPCw_qO_ZI0nCL09NCDcqvdnA8OHyMDIjEAIiH25hdGggYXV0b21vYmlsZSBuYXRoIGF1dG9tb2JpbGXgAQA!16s%2Fg%2F11lfh3gfn5?entry=ttu&g_ep=EgoyMDI1MDgxMC4wIKXMDSoASAFQAw%3D%3D" class="directions-link">
+                            <i class="fas fa-directions"></i> Get Directions
+                        </a>
+                    </div>
+
+                    <button class="call-now-btn" onclick="window.location.href='tel:+919763979170'">
+                        <i class="fas fa-phone-alt"></i> Call Now!
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="main-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>RoadRescue</h4>
+                    <p>Helping drivers find reliable repair services when they need it most.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="#">Home</a>
+                    <a href="#">services</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Contact Us</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: roderescue@gmail.com</p>
+                    <p>Phone: (555) 9922-73-9932</p>
+                    <div class="social-links">
+                        <a href="#"><i class='bx bxl-facebook'></i></a>
+                        <a href="#"><i class='bx bxl-twitter'></i></a>
+                        <a href="#"><i class='bx bxl-youtube'></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 RoadRescue. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
